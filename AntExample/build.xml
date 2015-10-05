@@ -28,8 +28,9 @@
 	</target>
 	
 <!-- Add dependencies here (android,ios) or uninstall.blackberry -->
-<target name="main" depends="android,iphone" />
-
+<!--<target name="main" depends="android,iphone" />-->
+<target name="main" depends="android" />
+	
 <!-- Android Specific -->
 <target name="android" depends="prepPackage, package.android" />
 
@@ -70,7 +71,7 @@
   <mkdir dir="${build.dir}/ios"/>
   
   <echo message="Copying SWF for Android"/>
-  <copy file="test.p12" todir="${build.dir}/android" />
+  <copy file="${android.cert}" todir="${build.dir}/android" />
   <copy file="${swfFile}" todir="${build.dir}/android" />
   
   <echo message="Copying SWF for ios"/>
@@ -120,6 +121,7 @@
 
 <!-- End Anrdoid -->
 
+	<!--
 <echo message="Packaging for iPhone"/>
 <target name="iphone" depends="compile">
 		<exec executable="${ADT}" dir="${build.dir}/ios">
@@ -136,4 +138,6 @@
 						"/>
 		</exec>
 	</target>
+	
+	-->
 </project>

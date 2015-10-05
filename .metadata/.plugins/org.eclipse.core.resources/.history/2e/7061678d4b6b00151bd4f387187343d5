@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AntExample" default="main" basedir="."><property name="environment" value="local" /><property file="build.properties"/>
+
+<!-- Path to the Flex task libraries. -->
+ 
+<path id="flextasks.classpath">
+  <fileset dir="libs">
+    <include name="*.jar"/>
+  </fileset>
+</path>
+
+<typedef resource="flexTasks.tasks" classpathref="flextasks.classpath" />
+
+<!-- Compile liberary project -->
+<property name="librery.deploy.dir" value="${basedir}/bin"/>
+    
+    <target name="librery" depends="libs.clean,libs.compile"/>
+    
+    <target name="libs.clean">
+        <delete file="${librery.deploy.dir}/ANTExampleLib.swc"/>
+    </target>
+    
+    <target name="libs.compile">
+    	<compc output="${librery.deploy.dir}/ANTExampleLib.swc"  maxmemory="1024m">
+        	<source-path path-element="${lib.proj.path}/src"/>
+        	<include-sources dir="${lib.proj.path}/src" includes="*"/>
+    	</compc>
+	</target>
+	
+<!-- Add dependencies here (android,ios) or uninstall.blackberry -->
+<target name="main" depends="android,iphone" />
+
+<!-- Android Specific -->
+<target name="android" depends="prepPackage, package.android" />
+
+<!-- Use package.blackberry OR install.blackberry, using both will overwrite the .bar file and remove signing. -->
+<target name="clean" depends="librery" >
+  <echo message="Cleaning Build Space"/>
+  <delete dir="${build.dir}"/>
+</target>
+
+<target name="prepPackage" depends="compile,handleDevices" />
+
+<target name="compile" depends="clean">
+  <echo message="Compiling swf"/>
+    
+  <mxmlc file="${projectFile}" output="${swfFile}" optimize="true" configname="AntExample" debug="false" failonerror="true">
+    <load-config filename="${FLEX_HOME}/frameworks/airmobile-config.xml"/>
+    <source-path path-element="${FLEX_HOME}/frameworks"/>
+    
+    <compiler.library-path dir="${FLEX_HOME}/frameworks" append="true">
+      <include name="libs/*" />
+    </compiler.library-path>  
+    
+    <compiler.library-path dir="${basedir}/libs" append="true">
+      <include name="*" />
+    </compiler.library-path>
+
+    <compiler.external-library-path  dir="${basedir}/ane" append="true">
+		<include name="NativeFeatures.ane" />
+	</compiler.external-library-path >
+  </mxmlc>
+</target>
+ 
+
+<!-- Create Android and ios directory. -->
+<target name="collect.devices" >
+  <echo message="Creating device folder for Android"/>
+  <mkdir dir="${build.dir}/android"/>
+  <mkdir dir="${build.dir}/ios"/>
+  
+  <echo message="Copying SWF for Android"/>
+  <copy file="${android.cert}" todir="${build.dir}/android" />
+  <copy file="${swfFile}" todir="${build.dir}/android" />
+  
+  <echo message="Copying SWF for ios"/>
+  <copy file="${swfFile}" todir="${build.dir}/ios" />
+  
+<!-- Copy any extension files -->
+        <delete dir="${package.extensiondir}"/>
+        <mkdir dir="${package.extensiondir}"/>
+ 
+        <copy todir="${package.extensiondir}" preservelastmodified="true" verbose="true">
+            <fileset dir="${ext.extensiondir}">
+                <patternset>
+                    <include name="*.ane"/>
+                </patternset>
+            </fileset>
+        </copy>
+ <!-- End -->  
+        
+  <echo message="Copying Application Description File for Android"/>
+  <copy file="${dev.dir}/${app.name}-app.xml" todir="${build.dir}/android" preservelastmodified="true" />
+  <copy file="${dev.dir}/${app.name}-app.xml" todir="${build.dir}/ios" preservelastmodified="true" />
+ <!-- <copy todir="${build.dir}/android/assets">
+    <fileset dir="${dev.dir}/assets" />
+  </copy> --> 
+  <echo message="Modifying application description file"/>
+  <replace file="${build.dir}/android/${app.name}-app.xml">
+    <replacefilter token="${contentText}" value="${app.name}.swf" />
+  </replace>
+</target>
+
+<target name="handleDevices" depends="collect.devices"/>
+<target name="package.android" >
+  <echo message="Packaging for Android ${cert}"/>
+  	<exec executable="${ADT}" dir="${build.dir}/android">
+			<arg line="-package
+						-target apk
+						-storetype ${build.storetype}
+						-keystore ${android.cert}
+						-storepass ${android.cert.password}
+						${app.name}
+						${app.name}-app.xml
+						${app.name}.swf
+						-extdir ${basedir}/ane
+						"/>
+		</exec>
+</target>
+
+<!-- End Anrdoid -->
+
+	<!--
+<echo message="Packaging for iPhone"/>
+<target name="iphone" depends="compile">
+		<exec executable="${ADT}" dir="${build.dir}/ios">
+			<arg line="-package
+						-target ipa-test-interpreter
+						-provisioning-profile ${build.mobileprofile}
+						-storetype ${build.storetype}
+						-keystore ${build.keystore}
+						-storepass ${build.storepass}
+						${app.name}
+						${app.name}-app.xml
+						${app.name}.swf
+						-extdir ${basedir}/ane
+						"/>
+		</exec>
+	</target>
+	
+	-->
+</project>

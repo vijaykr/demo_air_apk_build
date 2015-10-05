@@ -29,3 +29,110 @@ Binding(COMMAND+SHIFT+F12,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.contexts.window,,cocoa,system)
+!SESSION 2015-10-05 15:30:39.487 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/vkum60/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Sapient/Git_Build/demo_air_apk_build -keyring /Users/vkum60/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-05 15:30:42.814
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2015-10-05 15:30:50.391
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-10-05 15:30:50.391
+!MESSAGE A conflict occurred for COMMAND+SHIFT+F12:
+Binding(COMMAND+SHIFT+F12,
+	ParameterizedCommand(Command(org.eclipse.mylyn.tasks.ui.command.searchForTask,Search Repository for Task,
+		,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.mylyn.internal.tasks.ui.search.SearchTaskHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+F12,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.flashbridge.export.publish.movie,Publish Movie,
+		Publish in Flash Professional,
+		Category(com.adobe.flexbuilder.flashbridge.flashProCommands,&Flash Professional,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+
+!ENTRY org.eclipse.jface 2 0 2015-10-05 15:31:05.005
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-10-05 15:31:05.006
+!MESSAGE A conflict occurred for CTRL+SHIFT+F:
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.organize.autoformat,Apply Formatting,
+		,
+		Category(com.adobe.flexbuilder.as.editor.source.editing.category,ActionScript Source Editing,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=com.adobe.flexbuilder.mxml.editor.code.ui.actions.MXMLFormatterAction@18010d30)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(CTRL+SHIFT+F,
+	ParameterizedCommand(Command(FlexPrettyPrintFormat.commands.addons.flexbuilder,Format MXML/ActionScript,
+		Format Adobe MXML or ActionScript code.  Format the selected lines or the entire document if there is no selection.,
+		Category(FlexPrettyPrintCommand.commands.category,Flex,null,true),
+		flexprettyprint.handlers.FlexPrettyFormatHandler@6d08d69f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+
+!ENTRY org.eclipse.jface 2 0 2015-10-05 15:31:56.098
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-10-05 15:31:56.098
+!MESSAGE A conflict occurred for COMMAND+G:
+Binding(COMMAND+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,Find All Declarations In Workspace,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,Navigation,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=com.adobe.flexbuilder.as.editor.ui.actions.FindAllDeclarationsAction@7dcc2c70)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(COMMAND+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.declarations.in.workspace,Find All Declarations In Workspace,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,Navigation,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=com.adobe.flexbuilder.as.editor.ui.actions.FindAllDeclarationsAction@7dcc2c70)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(COMMAND+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-10-05 15:31:56.098
+!MESSAGE A conflict occurred for COMMAND+SHIFT+G:
+Binding(COMMAND+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,Find All References In Workspace,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,Navigation,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=com.adobe.flexbuilder.as.editor.ui.actions.FindAllReferencesAction@6779ad95)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexide.editorcore.flexEditorScope,,,system)
+Binding(COMMAND+SHIFT+G,
+	ParameterizedCommand(Command(com.adobe.flexbuilder.as.editor.find.all.references.in.workspace,Find All References In Workspace,
+		,
+		Category(com.adobe.flexbuilder.editorcore.navigation.category,Navigation,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=com.adobe.flexbuilder.as.editor.ui.actions.FindAllReferencesAction@6779ad95)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	com.adobe.flexbuilder.as.editor.context.packageexplorer,,,system)
+Binding(COMMAND+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)

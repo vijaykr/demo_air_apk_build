@@ -1,0 +1,49 @@
+flex.path = /Apache 
+flex.sdkVersion=AIR 17
+flex.sdkPath= ${flex.path}/${flex.sdkVersion}
+FLEX_HOME= ${flex.sdkPath}
+contentText = [This value will be overwritten by Flash Builder in the output app.xml]
+ 
+ADT = ${flex.sdkPath}/bin/adt
+
+ 
+ 
+## Directories
+build.dir = bin-release
+dev.dir = ${basedir}/src
+app.name = AntExample
+## mxml or as
+app.type = mxml
+ 
+ 
+## Android cert info
+android.cert = certificate.p12
+android.cert.password = sapient
+ 
+ 
+## General
+swfFile=${build.dir}/${app.name}.swf
+projectFile=${dev.dir}/${app.name}.${app.type}
+
+
+librery.deploy.dir = libs
+lib.proj.path = ../AntExampleLib
+
+
+ipa_file = ${app.name}.ipa
+app_descriptor = ${dev.dir}/${app.name}-app.xml
+publish_dir_ios = ${build.dir}/ios
+ADT_lib = ${flex.sdkPath}/lib/adt.jar
+
+
+package.extensiondir=${build.dir}/ane
+ext.extensiondir=${basedir}/ane
+
+
+
+##ios
+
+build.storetype=pkcs12
+build.keystore=/Users/vkum60/Desktop/XGames/Avon2016/Distribution_certificate.p12
+build.storepass=sapient@123
+build.mobileprofile=/Avon__mBrochure_Distribution.mobileprovision
