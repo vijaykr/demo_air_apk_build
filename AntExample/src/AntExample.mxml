@@ -13,7 +13,7 @@
 				// TODO Auto-generated method stub
 				var ane:AvonANENativeFeatures = new AvonANENativeFeatures();
 				btn.label = "Device Id - - "+ ane.getDeviceId()+"";
-				trace("ane.getDeviceId() "+ ane.getDeviceManufacturer() + ane.getDeviceModel());
+				//trace("ane.getDeviceId() "+ ane.getDeviceManufacturer() + ane.getDeviceModel());
 			}
 			
 		]]>
