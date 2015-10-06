@@ -121,7 +121,6 @@
 
 <!-- End Anrdoid -->
 
-	<!--
 <echo message="Packaging for iPhone"/>
 <target name="iphone" depends="compile">
 		<exec executable="${ADT}" dir="${build.dir}/ios">
@@ -139,5 +138,4 @@
 		</exec>
 	</target>
 	
-	-->
 </project>
