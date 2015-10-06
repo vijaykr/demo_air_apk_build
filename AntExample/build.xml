@@ -28,8 +28,8 @@
 	</target>
 	
 <!-- Add dependencies here (android,ios) or uninstall.blackberry -->
-<!--<target name="main" depends="android,iphone" />-->
-<target name="main" depends="android" />
+<target name="main" depends="android,iphone" />
+<!--<target name="main" depends="android" />-->
 	
 <!-- Android Specific -->
 <target name="android" depends="prepPackage, package.android" />
