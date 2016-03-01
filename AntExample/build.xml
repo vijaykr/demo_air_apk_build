@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="AntExample" default="main" basedir="."><property name="environment" value="local" />
+<property file="build.properties"/>
 
 <!-- Path to the Flex task libraries. -->
  
