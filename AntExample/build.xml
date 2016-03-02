@@ -2,7 +2,6 @@
 <project name="AntExample" default="main" basedir="."><property name="environment" value="local" />
 
 <property name="FLEX_HOME" value="D:\avon\workspace\sdk\AIR 16.0 SDK"/>
-<property name="basedir" value="."/>
 <!-- Path to the Flex task libraries. -->
  
 <path id="flextasks.classpath">
