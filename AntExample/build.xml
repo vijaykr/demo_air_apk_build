@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="AntExample" default="main" basedir="../ANTExample"><property name="environment" value="local" />
+<project name="AntExample" default="main" basedir="."><property name="environment" value="local" />
 
 <!-- Path to the Flex task libraries. -->
  
