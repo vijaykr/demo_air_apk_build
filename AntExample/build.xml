@@ -9,7 +9,7 @@
     <include name="*.jar"/>
   </fileset>
 </path>
-
+<property name="FLEX_HOME" value="D:\avon\workspace\sdk\AIR 16.0 SDK"/>
 <typedef resource="flexTasks.tasks" classpathref="flextasks.classpath" />
 
 
