@@ -7,6 +7,7 @@
 			import com.adobe.nativeExtensions.AvonANENativeFeatures;
 			
 			import mx.events.FlexEvent;
+			var nCount:Number = 0;
 			
 			protected function onCreationComplete(event:FlexEvent):void
 			{
@@ -16,12 +17,19 @@
 				//trace("ane.getDeviceId() "+ ane.getDeviceManufacturer() + ane.getDeviceModel());
 			}
 			
+			protected function onClick(event:MouseEvent):void
+			{
+				// TODO Auto-generated method stub
+				nCount++;
+				btn.label = "Press Count "+ nCount;
+			}
+			
 		]]>
 	</fx:Script>
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<local:CustomButton id="btn">
+	<local:CustomButton id="btn" click="onClick(event)">
 		
 	</local:CustomButton>
 </s:Application>
