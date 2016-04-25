@@ -21,7 +21,7 @@
 			{
 				// TODO Auto-generated method stub
 				nCount++;
-				btn.label = "Press Count :: --->"+ nCount;
+				btn.label = "Press Count :: ->"+ nCount;
 			}
 			
 		]]>
