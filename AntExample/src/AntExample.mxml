@@ -11,7 +11,7 @@
 			
 			protected function onCreationComplete(event:FlexEvent):void
 			{
-				trace("Updated file");
+				trace("Updated file......");
 				var ane:AvonANENativeFeatures = new AvonANENativeFeatures();
 				btn.label = "Device Id - - "+ ane.getDeviceId()+"";
 				//trace("ane.getDeviceId() "+ ane.getDeviceManufacturer() + ane.getDeviceModel());
