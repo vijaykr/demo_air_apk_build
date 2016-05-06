@@ -11,7 +11,7 @@
 			
 			protected function onCreationComplete(event:FlexEvent):void
 			{
-				// TODO Auto-generated method stub
+				trace("Update for testing");
 				var ane:AvonANENativeFeatures = new AvonANENativeFeatures();
 				btn.label = "Device Id - - "+ ane.getDeviceId()+"";
 				//trace("ane.getDeviceId() "+ ane.getDeviceManufacturer() + ane.getDeviceModel());
